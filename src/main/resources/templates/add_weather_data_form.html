@@ -5,10 +5,10 @@
     <title>Title</title>
 </head>
 <body>
-    <form action="/addWeatherDataForm" method="post" th:object="${addWeatherDataForm}"><div>
+    <form action="/weatherDto/add" method="post" th:object="${addWeatherDataForm}"><div>
         <table bgcolor="silver">
             <tr>
-                <td>PPodaj nazwe miasta:</td><td><input type="text" th:field="*{cityName}"></td>
+                <td>Podaj nazwe miasta:</td><td><input type="text" th:field="*{cityName}"></td>
             </tr>
             <tr>
                 <td>Podaj temperature:</td><td><input type="number" th:field="*{temperature}"></td>
