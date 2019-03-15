@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="/phoneBookForm" method="post" th:object="${phoneBookForm}"><div>
+        <table bgcolor="silver">
+            <tr>
+                <td>Podaj Imię:</td><td><input type="text" th:field="*{name}"></td>
+            </tr>
+            <tr>
+                <td>Podaj Nazwisko:</td><td><input type="text" th:field="*{surname}"></td>
+            </tr>
+            <tr>
+                <td>Podaj Nr telefonu:</td><td><input type="text" th:field="*{phoneNumber}"></td>
+            </tr>
+            <tr>
+                <td>Podaj płeć:</td>
+                <td>
+                    <input type="radio" th:field="*{gender}" value="MAN">Mężczyzna
+                    <input type="radio" th:field="*{gender}" value="WOMAN">Kobieta
+                </td>
+            </tr>
+            <tr>
+                <br>
+                <td colspan="3" align="center"><br>
+                    <input type="submit" value="Dodaj">
+                    <input type="reset" value="Wyczyść">
+                    <a href="/phoneBookView"> Wyświetl liste kontaktów</a>
+                    <a href="/phoneBookSearchForm"> Przejdź do wyszukiwania kontaktów</a>
+                </td>
+            </tr>
+        </table>
+    </div></form>
+</body>
+</html>
