@@ -5,31 +5,23 @@
     <title>Title</title>
 </head>
 <body>
-    <form action="/phoneBookForm" method="post" th:object="${phoneBookForm}"><div>
+    <form action="/addWeatherDataForm" method="post" th:object="${addWeatherDataForm}"><div>
         <table bgcolor="silver">
             <tr>
-                <td>Podaj Imię:</td><td><input type="text" th:field="*{name}"></td>
+                <td>PPodaj nazwe miasta:</td><td><input type="text" th:field="*{cityName}"></td>
             </tr>
             <tr>
-                <td>Podaj Nazwisko:</td><td><input type="text" th:field="*{surname}"></td>
+                <td>Podaj temperature:</td><td><input type="number" th:field="*{temperature}"></td>
             </tr>
             <tr>
-                <td>Podaj Nr telefonu:</td><td><input type="text" th:field="*{phoneNumber}"></td>
-            </tr>
-            <tr>
-                <td>Podaj płeć:</td>
-                <td>
-                    <input type="radio" th:field="*{gender}" value="MAN">Mężczyzna
-                    <input type="radio" th:field="*{gender}" value="WOMAN">Kobieta
-                </td>
+                <td>Podaj wilgotność:</td><td><input type="number" th:field="*{humidity}"></td>
             </tr>
             <tr>
                 <br>
                 <td colspan="3" align="center"><br>
                     <input type="submit" value="Dodaj">
                     <input type="reset" value="Wyczyść">
-                    <a href="/phoneBookView"> Wyświetl liste kontaktów</a>
-                    <a href="/phoneBookSearchForm"> Przejdź do wyszukiwania kontaktów</a>
+                    <a href="/weatherStatisticView"> Wyświetl statystyki pogodowe</a>
                 </td>
             </tr>
         </table>
