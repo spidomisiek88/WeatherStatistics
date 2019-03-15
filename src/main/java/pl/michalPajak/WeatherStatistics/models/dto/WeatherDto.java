@@ -16,6 +16,13 @@ public class WeatherDto {
         this.localDateTime = LocalDateTime.now();
     }
 
+    public WeatherDto(String cityName, Integer temperature, Integer humidity, LocalDateTime localDateTime) {
+        this.cityName = cityName;
+        this.temperature = temperature;
+        this.humidity = humidity;
+        this.localDateTime = localDateTime;
+    }
+
     public String getCityName() {
         return cityName;
     }

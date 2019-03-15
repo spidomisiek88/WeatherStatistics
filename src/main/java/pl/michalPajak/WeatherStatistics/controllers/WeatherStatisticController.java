@@ -12,6 +12,9 @@ import pl.michalPajak.WeatherStatistics.models.services.WeatherDatabaseService;
 import pl.michalPajak.WeatherStatistics.models.services.WeatherStastisticService;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 
 @Controller
 public class WeatherStatisticController {
@@ -41,6 +44,29 @@ public class WeatherStatisticController {
         model.addAttribute("addWeatherDataForm", new AddWeatherDataForm());
 
         return "add_weather_data_form";
+    }
+
+    @GetMapping("/weather/reset")
+    public String resetAllWeatherData(Model model) {
+
+        weatherDatabaseService.resetWeatherDatabase();
+
+        return "redirect:/weather/view";
+    }
+
+    @GetMapping("/weather/sample")
+    public String sampleWeatherData(Model model) {
+        List<WeatherDto> sampleWeatherDtoList = new ArrayList<>();
+
+        for (int i = 0; i < 100; i++) {
+            sampleWeatherDtoList.add(new WeatherDto(Integer.toString(ThreadLocalRandom.current().nextInt(5)),
+                    ThreadLocalRandom.current().nextInt(-60,60),
+                    ThreadLocalRandom.current().nextInt(0,100), LocalDateTime.now()));
+        }
+
+        weatherDatabaseService.setWeatherDtoList(sampleWeatherDtoList);
+
+        return "redirect:/weather/view";
     }
 
     @PostMapping("/weather/add")

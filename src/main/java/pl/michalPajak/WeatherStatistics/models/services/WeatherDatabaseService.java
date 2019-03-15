@@ -79,6 +79,10 @@ public class WeatherDatabaseService {
         return findetCitys;
     }
 
+    public void resetWeatherDatabase() {
+        weatherDtoList.clear();
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
