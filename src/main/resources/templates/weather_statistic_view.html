@@ -5,6 +5,43 @@
     <title>Weather Statiscic</title>
 </head>
 <body>
+    <div>
+        <table bgcolor="silver">
+            <tr>
+                <td>Najgorętszy dzień zapisany w aplikacji:</td><td><span th:text="${theHighestTemperature.getLocalDateTime()}"></span></td>
+            </tr>
+            <tr>
+                <td>Najwyższa temperatura zapisana w aplikacji:</td><td><span th:text="${theHighestTemperature.getTemperature()}"></span></td>
+            </tr>
+            <tr>
+                <td>Miasto z najwyższa temperaturą zapisaną w aplikacji:</td><td><span th:text="${theHighestTemperature.getCityName()}"></span></td>
+            </tr>
+            <tr>
+                <td>Najwilgotniejszy dzień zapisany w aplikacji:</td><td><span th:text="${theHighestHumidity.getLocalDateTime()}"></span></td>
+            </tr>
+            <tr>
+                <td>Najwyższa wilgotność zapisana w aplikacji:</td><td><span th:text="${theHighestHumidity.getHumidity()}"></span></td>
+            </tr>
+            <tr>
+                <td>Miasto z najwyższa wilgotnością zapisaną w aplikacji:</td><td><span th:text="${theHighestHumidity.getCityName()}"></span></td>
+            </tr>
 
+            <tr>
+                <td>Najwyższa średnia temperatura:</td><td><span th:text="${averageTemperaturesForCities.getValue()}"></span></td>
+            </tr>
+            <tr>
+                <td>Miasto z najwyższa średnia temperaturą zapisaną w aplikacji:</td><td><span th:text="${averageTemperaturesForCities.getKey()}"></span></td>
+            </tr>
+
+            <tr>
+                <br>
+                <td colspan="3" align="center"><br>
+                    <a href="/weather/add"> Dodaj</a>
+                    <a href="/weatherStatisticView"> Reset</a>
+                    <a href="/weatherStatisticView"> Sample</a>
+                </td>
+            </tr>
+        </table>
+    </div>
 </body>
 </html>
