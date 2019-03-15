@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-    <form action="/weatherDto/add" method="post" th:object="${addWeatherDataForm}"><div>
+    <form action="/weather/add" method="post" th:object="${addWeatherDataForm}"><div>
         <table bgcolor="silver">
             <tr>
                 <td>Podaj nazwe miasta:</td><td><input type="text" th:field="*{cityName}"></td>
@@ -21,7 +21,7 @@
                 <td colspan="3" align="center"><br>
                     <input type="submit" value="Dodaj">
                     <input type="reset" value="Wyczyść">
-                    <a href="/weatherStatisticView"> Wyświetl statystyki pogodowe</a>
+                    <a href="/weather/view"> Wyświetl statystyki pogodowe</a>
                 </td>
             </tr>
         </table>
