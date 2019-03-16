@@ -42,33 +42,25 @@ public class WeatherStastisticService {
     }
 
     private double calculationAverageTemperature(List<WeatherDto> data) {
-        List<Integer> temperatureList = new ArrayList<>();
+        double result = 0;
 
         for (WeatherDto weather : data) {
-            temperatureList.add(weather.getTemperature());
+            result += weather.getTemperature();
         }
 
-        return calculationAverage(temperatureList);
+        result /= data.size();
+
+        return result;
     }
 
     private double calculationAverageHumidity(List<WeatherDto> data) {
-        List<Integer> humidityList = new ArrayList<>();
-
-        for (WeatherDto weather : data) {
-            humidityList.add(weather.getHumidity());
-        }
-
-        return calculationAverage(humidityList);
-    }
-
-    private double calculationAverage(List<Integer> calculationData) {
         double result = 0;
 
-        for (Integer element : calculationData) {
-            result += element;
+        for (WeatherDto weather : data) {
+            result += weather.getHumidity();
         }
 
-         result /= calculationData.size();
+        result /= data.size();
 
         return result;
     }

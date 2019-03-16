@@ -51,7 +51,7 @@ public class WeatherStatisticController {
 
         weatherDatabaseService.resetWeatherDatabase();
 
-        return "redirect:/weather/view";
+        return "redirect:/weather/add";
     }
 
     @GetMapping("/weather/sample")
